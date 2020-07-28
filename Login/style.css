@@ -1,0 +1,43 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+#login {
+    background-color: #ffffff;
+}
+
+.img-box {
+    border-radius: 100%;
+    width: 27vmin;
+    height: 27vmin;
+    background-color: #3ec6ff;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-style: solid;
+    border-color: white;
+}
+
+#head {
+    background-color: #3ec6ff;
+}
+
+.h1 {
+    font-size: 3vh;
+}
+
+.h2 {
+    font-size: 2vh;
+    font-weight: lighter;
+    color: gray;
+}
+
+#form-frame {
+    margin-top: 5%;
+}
+
+/* #username {
+} */
+
+#password {
+    margin-bottom: 1vmax;
+}
