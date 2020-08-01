@@ -1,0 +1,33 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #3EC6FF;
+    height: 100%;
+}
+
+.h1 {
+    font-size: 3vh;
+    margin-top: 5vh;
+    color: #ffffff;
+}
+
+.h2 {
+    font-size: 2vh;
+    margin-top: 2vh;
+    color: #ffffff;
+
+}
+
+/** ปรับแก้ความโค้งมนของช่องกรอกเลขบัตรประชาชน **/
+#id-input {
+    border-radius: 25px;
+}
+
+/** ปรับปุ่ม ยืนยัน **/
+#button {
+    background-color: #3EFFA2;
+    /* box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17); */
+}
+
+#IDcard-row {
+    margin-top: -30%;
+}
