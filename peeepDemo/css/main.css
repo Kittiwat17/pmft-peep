@@ -1,0 +1,5 @@
+#barcode-scanner canvas,video{
+    height: auto;
+    width: 70%;
+    border-radius: 50px;
+}
