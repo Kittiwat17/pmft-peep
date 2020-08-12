@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-inverse navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">ลงทะเบียนร้านค้า</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">เข้าสู่ระบบร้านค้า</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">ลงทะเบียนบุคคลภายนอก <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- end nav bar -->
+
+    <!-- body -->
+    <div class="body-page container-fluid">
+        <div class="row">
+            <!--Header column-->
+            <div class="col-12 col-md-6 order-1 text-center" id="head">
+                <h2>PMFT</h2>
+            </div>
+            <!--Login column-->
+            <div class="col-12 col-md-6 order-2 text-center" id="login">
+                <div class="img-box"></div>
+                <p class="h1">ลงทะเบียนบุคคลภายนอก</p>
+                <p class="h2">กรุณากรอกข้อมูลสำหรับรับการเข้า - ออกสถานที่</p>
+                <form id="form-frame" action="">
+                  <div class="form-group row">
+                    <label for="inputFirstName" class="col-3 col-sm-2 col-md-3 col-lg-2 col-form-label offset-sm-2 offset-md-1 offset-lg-2 txt-lable">ชื่อจริง</label>
+                    <div class="col-9 col-sm-6 col-md-7 col-lg-6" id="firstName">
+                        <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputLastName" class="col-3 col-sm-2 col-md-3 col-lg-2 col-form-label offset-sm-2 offset-md-1 offset-lg-2 txt-lable">นามสกุล</label>
+                      <div class="col-9 col-sm-6 col-md-7 col-lg-6" id="lastName">
+                          <input type="text" class="form-control">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail" class="col-3 col-sm-2 col-md-3 col-lg-2 col-form-label offset-sm-2 offset-md-1 offset-lg-2 txt-lable">E-mail</label>
+                      <div class="col-9 col-sm-6 col-md-7 col-lg-6" id="email">
+                          <input type="email" class="form-control">
+                      </div>
+                  </div>
+                  <button type="submit" class="btn">เข้าสู่ระบบ</button>
+                </form>
+            </div>
+            <!-- end -->
+        </div>
+    </div>
+</body>
+</html>

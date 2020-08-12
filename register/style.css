@@ -1,0 +1,63 @@
+html, body {
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+.body-page {
+    height: 90%;
+}
+
+#head {
+    background-color: #868686;
+    width: 100%;
+}
+
+#login {
+    background-color: #ffffff;
+}
+
+.img-box {
+    border-radius: 100%;
+    width: 27vmin;
+    height: 27vmin;
+    background-color: #868686;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-style: solid;
+    border-color: white;
+    position: relative;
+}
+
+.h1 {
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.h2 {
+    font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1600 - 320)));
+    font-weight: lighter;
+    color: gray;
+}
+
+#form-frame {
+    margin-top: 5%;
+}
+
+.txt-lable {
+    font-size: calc(12px + (22 - 12) * ((100vw - 320px) / (1600 - 320)));
+}
+
+#email {
+    margin-bottom: 1vmax;
+}
+
+.btn {
+    background-color: #868686;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #666666;
+    color: #ffffff;
+}

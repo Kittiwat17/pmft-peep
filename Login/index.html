@@ -3,16 +3,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <!-- nav bar -->
+    <nav class="navbar navbar-inverse navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">ลงทะเบียนร้านค้า</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">เข้าสู่ระบบร้านค้า <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ลงทะเบียนบุคคลภายนอก</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- end nav bar -->
+
+    <div class="body-page container-fluid">
         <div class="row">
             <!--Login column-->
             <div class="col-12 col-md-6 order-2 order-md-1 text-center" id="login">
@@ -30,7 +54,7 @@
                             <input type="password" class="form-control" placeholder="Password">
                         </div>
                     </div>
-                    <button type="submit" class="btn-lg btn-primary">เข้าสู่ระบบ</button>
+                    <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
                 </form>
             </div>
             <!--Header column-->

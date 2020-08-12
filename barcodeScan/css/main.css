@@ -1,0 +1,71 @@
+/* camera */
+#barcode-scanner canvas,video{
+    height: 40vh;
+    width: 90%;
+    margin: auto;
+}
+
+/* css */
+body {
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+}
+
+.head-page {
+    height: 6vh;
+    background-color: #3EC6FF;
+}
+
+.head-text {
+    color: white;
+    font-size: calc(18px + (38 - 18) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.scan-page {
+    height: 69vh;
+    background-color: #3EC6FF;
+}
+
+.button-page {
+    height: 25vh;
+    padding-top: 2vh;
+    background-color: #ffffff;
+}
+
+.btn-box {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.button {
+    width: 100%;
+    background-color: #3EC6FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    font-size: calc(20px + (34 - 20) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.button-1 {
+    width: 100%;
+    background-color: #C4C4C4;
+    color: #000000;
+    border: none;
+    border-radius: 40px;
+    font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.button-2 {
+    width: 100%;
+    background-color: #3EC6FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
+}

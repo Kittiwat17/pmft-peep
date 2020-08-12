@@ -1,6 +1,13 @@
-body {
+html, body {
     font-family: 'Kanit', sans-serif;
+    height: 100%;
+    margin: 0;
 }
+
+.body-page {
+    height: 90%;
+}
+
 #login {
     background-color: #ffffff;
 }
@@ -22,11 +29,11 @@ body {
 }
 
 .h1 {
-    font-size: 3vh;
+    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1600 - 320)));;
 }
 
 .h2 {
-    font-size: 2vh;
+    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1600 - 320)));;
     font-weight: lighter;
     color: gray;
 }
@@ -41,3 +48,12 @@ body {
 #password {
     margin-bottom: 1vmax;
 }
+
+/* .btn-lg {
+    background-color: #3EC6FF;
+    color: #ffffff;
+}
+
+.btn-lg:hover {
+    background-color: #00b3ff;
+} */

@@ -1,0 +1,59 @@
+html, body {
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+.body-page {
+    height: 90%;
+}
+
+#login {
+    background-color: #ffffff;
+}
+
+.img-box {
+    border-radius: 100%;
+    width: 27vmin;
+    height: 27vmin;
+    background-color: #3ec6ff;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-style: solid;
+    border-color: white;
+}
+
+#head {
+    background-color: #3ec6ff;
+}
+
+.h1 {
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));;
+}
+
+.h2 {
+    font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1600 - 320)));;
+    font-weight: lighter;
+    color: gray;
+}
+
+#form-frame {
+    margin-top: 5%;
+}
+
+/* #username {
+} */
+
+#password {
+    margin-bottom: 1vmax;
+}
+
+/* .btn-lg {
+    background-color: #3EC6FF;
+    color: #ffffff;
+}
+
+.btn-lg:hover {
+    background-color: #00b3ff;
+} */
