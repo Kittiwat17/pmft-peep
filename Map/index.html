@@ -10,39 +10,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Enter-IDcard</title>
+    <title>Map</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <!-- previous to scan barcode page -->
-        <div class="row">
-            <div class="col" id="previous">
-                <a href="">
-                    <p class="h2"> ← ย้อนกลับ</p>
-                </a>
-            </div>
-        </div>
+        <div id="map">
 
+        </div>
         <!--Enter ID Card column-->
-        <div class="h-100 row align-items-center" id="IDcard-row">
+        <div class="" id="">
             <div class="col text-center">
-                <p class="h1">กรุณากรอกเลขประจำตัวผู้มาใช้บริการ</p>
+                <p class="h1">เลือกโลเคชั่นของคุณ</p>
+                <br>
                 <form action="">
                     <div class="form-group row" id="form-frame">
-                        <div class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3" id="ID-Card">
-                            <input type="text" class="form-control" placeholder="ID Card" id="id-input" pattern="[0-9]{13}" title="Please insert ID Card 13 digits : XXXXXXXXXXXXX">
+                        <div class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3" id="location">
+                            <input type="text" class="form-control" placeholder="ใส่สถานที่ของคุณ" id="location-input">
                         </div>
                     </div>
-                    <button type="submit" class="btn" id="button">ยืนยัน</button>
+                    <button type="button" class="btn" id="button">ยืนยัน</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
-
-<script>
-
-</script>
 
 </html>
