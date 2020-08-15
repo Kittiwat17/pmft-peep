@@ -10,6 +10,7 @@ body {
 
 .head-text {
     color: white;
+    margin-top: 1.5vh;
     font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
 }
 
@@ -55,4 +56,12 @@ body {
     font-size: calc(22px + (30 - 22) * ((100vw - 320px) / (1600 - 320)));
     text-align: center;
     padding: 10px 10px;
+}
+
+.button:hover {
+    background-color: #15a2da;
+}
+
+.button-1:hover {
+    background-color: #9b9b9b;
 }

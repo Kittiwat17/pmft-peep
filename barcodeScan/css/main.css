@@ -22,7 +22,8 @@ body {
 
 .head-text {
     color: white;
-    font-size: calc(18px + (38 - 18) * ((100vw - 320px) / (1600 - 320)));
+    margin-top: 1.5vh;
+    font-size: calc(18px + (34 - 18) * ((100vw - 320px) / (1600 - 320)));
 }
 
 .scan-page {
@@ -72,4 +73,12 @@ body {
     font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
     text-align: center;
     padding: 10px 10px;
+}
+
+.button:hover, .button-2:hover {
+    background-color: #15a2da;
+}
+
+.button-1:hover {
+    background-color: #9b9b9b;
 }
