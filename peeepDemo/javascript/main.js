@@ -89,3 +89,4 @@ function load_quagga() {
 
 load_quagga();
 $(document).on('turbolinks:load', load_quagga);
+

@@ -1,9 +1,14 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js" integrity="sha256-JDVyLQRqvRSTL/6WaPud93JXpfEdW11zwjqhoNgkGXc=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"   integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="   crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"
+        integrity="sha256-JDVyLQRqvRSTL/6WaPud93JXpfEdW11zwjqhoNgkGXc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+        integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <!-- Barcode -->
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,9 +18,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="style.css">
+    <!-- script คอมเม้นต์ไว้เพราะน้องบอกน้องหาไม่เจอค่ะพี่สาว-->
+    <!-- <script src="javascript/main.js"></script> -->
+
 
     <title>Barcode</title>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- head -->
@@ -27,8 +36,11 @@
         <!-- barcode -->
         <div class="barcode-page row">
             <div class="barcode-gene col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3 text-center">
-                
+
                 <!-- !!! barcode generate here !!! -->
+                <div id="barcode-margin">
+                    <img id="barcode"></img>
+                </div>
 
             </div>
         </div>
@@ -52,7 +64,11 @@
             </div>
         </div>
     </div>
+
     <!-- script -->
-    <script src="javascript/main.js"></script>
+    <script type="text/javascript">
+        JsBarcode("#barcode", "99000001"); 
+    </script>
 </body>
+
 </html>
