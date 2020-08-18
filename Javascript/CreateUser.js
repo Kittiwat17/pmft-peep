@@ -4,7 +4,7 @@ function registerEmail(e) {
   var email = document.getElementById("email").value;
   var password = document.getElementById("passwordForm").value;
   var nameStore = document.getElementById("storeNameForm").value;
-  
+  var user = firebase.auth().currentUser;
   console.log(email,password)
 
   firebase
@@ -25,12 +25,16 @@ function registerEmail(e) {
       // [END_EXCLUDE]
     }).then;
     console.log("Success")
-    writeUserData(nameStore,email)
+    if(user){
+      var uid = user.uid
+    }
+    writeUserData(nameStore,email,uid)
 }
 
 
-function writeUserData(place,email) {
-    firebase.database().ref('users-store/' + place).set({
+function writeUserData(place,email,uid) {
+    firebase.database().ref('users-store/' + uid).set({
+      namePlace:place,
       email: email,
       location: "",
     });
