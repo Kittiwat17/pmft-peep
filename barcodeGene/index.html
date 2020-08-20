@@ -46,14 +46,26 @@
         </div>
         <!-- button -->
         <div class="button-page row">
-            <!-- 1 -->
+            <!-- 1 -> correct modal -->
             <div class="col-12">
                 <div class="btn-box col-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3 text-center">
-                    <a href="">
-                        <button type="button" class="button">บันทึกรูปภาพ</button>
-                    </a>
+                    
+                        <button type="button" class="button" data-toggle="modal" data-target="#correctModal">บันทึกรูปภาพ</button>
                 </div>
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="correctModal" tabindex="-1" role="dialog" aria-labelledby="correctModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="pic">
+                                <img src="pic/correct-icon.png" alt="correct" width="100vmax">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 2 -->
             <div class="col-12">
                 <div class="btn-box col-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3 text-center">

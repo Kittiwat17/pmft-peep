@@ -65,6 +65,11 @@ body {
 .button-1:hover {
     background-color: #9b9b9b;
 }
+
+.pic {
+    text-align: center;
+}
+
 #barcode-margin {
     margin-top: 20vh;
 }
