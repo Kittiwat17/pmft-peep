@@ -15,19 +15,15 @@ html, body {
 
 #login {
     background-color: #ffffff;
+    height: 90%;
+    margin-top: 2vh;
 }
 
 .img-box {
     border-radius: 100%;
-    width: 27vmin;
-    height: 27vmin;
-    background-color: #868686;
-    margin: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    border-style: solid;
-    border-color: white;
-    position: relative;
+    width: 10em;
+    height: 10em;
+    margin: 7% auto;
 }
 
 .h1 {
@@ -66,4 +62,20 @@ html, body {
 .submit-btn:hover {
     background-color: #666666;
     color: #ffffff;
+}
+
+@media only screen and (min-height: 600px) and (max-width: 576px) {
+    #login {
+        margin-top: 10vh;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #login {
+        height: 90vh;
+    }
+
+    #head {
+        height: 92vh;
+    }
 }
