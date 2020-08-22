@@ -42,18 +42,22 @@ html, body {
     margin-top: 5%;
 }
 
-/* #username {
-} */
-
 #password {
     margin-bottom: 1vmax;
 }
 
-/* .btn-lg {
-    background-color: #3EC6FF;
+.submit-btn {
+    width: 12em;
+    background-color: #3ec6ff;
     color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
 }
 
-.btn-lg:hover {
-    background-color: #00b3ff;
-} */
+.submit-btn:hover {
+    background-color: #1faeeb;
+    color: #ffffff;
+}
