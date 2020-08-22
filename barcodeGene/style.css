@@ -31,6 +31,7 @@ body {
     padding-top: 2vh;
     background-color: #ffffff;
 }
+
 .btn-box {
     width: 100%;
     padding: 1vh;
@@ -68,6 +69,32 @@ body {
 
 .pic {
     text-align: center;
+    margin: 1rem auto;
+}
+
+.txt-modal {
+    font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    margin-top: 1rem;
+}
+
+.back-btn {
+    width: 100%;
+    background-color: #FF7D7D;
+    border-radius: 30px;
+    border: none;
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.cancel-btn {
+    width: 100%;
+    background-color: #C4C4C4;
+    border-radius: 30px;
+    border: none;
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
 }
 
 #barcode-margin {
