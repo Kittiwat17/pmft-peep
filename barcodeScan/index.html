@@ -56,9 +56,33 @@
                 </div>
             </div>
         </div>
+
+        <!-- Correct Modal -->
+        <div class="modal fade" id="correctModal" tabindex="-1" role="dialog" aria-labelledby="correctModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="pic">
+                            <img src="../pic/correct-icon.png" alt="correct" width="50%">
+                            <p class="txt-modal">บันทึกผู้มาใช้บริการสำเร็จ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- script -->
     <script src="javascript/main.js"></script>
+
+    <script>
+        // close modal auto script
+        $('#correctModal').on('shown.bs.modal', function () {
+            $(this).delay(1000).fadeOut(300, function () {
+                $(this).modal('hide');
+            });
+        })
+    </script>
 </body>
 
 </html>

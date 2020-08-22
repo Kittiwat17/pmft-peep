@@ -71,3 +71,13 @@ body {
 .button-1:hover {
     background-color: #9b9b9b;
 }
+
+.pic {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.txt-modal {
+    font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    margin-top: 1rem;
+}
