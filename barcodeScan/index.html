@@ -65,7 +65,7 @@
                         <div class="pic">
                             <img src="../pic/correct-icon.png" alt="correct" width="50%">
                             <p class="txt-modal">ล็อคอินสำเร็จ</p>
-                            <p>โค๊ดของคุณคือ</p>
+                            <p id="show-code">โค๊ดของคุณคือ</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
     <script>
         // close modal auto script
         $('#correctModal').on('shown.bs.modal', function () {
-            $(this).delay(1000).fadeOut(300, function () {
+            $(this).delay(3000).fadeOut(300, function () {
                 $(this).modal('hide');
             });
         })

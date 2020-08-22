@@ -78,9 +78,13 @@ function load_quagga() {
                     // audio.play()
                     // alert(code);
                     new Audio('../../sound/beep-sound.mp3').play();
-                    document.querySelector('.txt-modal')
-                    $('#correctModal').modal('show');
-                      
+                    Quagga.stop();
+    
+                    document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : '+ code;
+     
+                        $('#correctModal').modal('show');
+                
+                    setTimeout(load_quagga(), 10000);
 
                 }
 
