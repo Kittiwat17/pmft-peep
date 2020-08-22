@@ -5,12 +5,12 @@ html, body {
 }
 
 .body-page {
-    height: 90%;
+    height: 92vh;
 }
 
 #login {
     background-color: #ffffff;
-    height: 90%;
+    height: 90vh;
     margin-top: 2vh;
 }
 
@@ -61,15 +61,24 @@ html, body {
 
 @media only screen and (min-height: 600px) and (max-width: 576px) {
     #login {
-        margin-top: 10vh;
+        height: 75vh;
+        margin-top: 15vh;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+    #login {
+        height: 75vh;
+        margin-top: 15vh;
     }
 }
 
 @media only screen and (min-width: 992px) {
     #login {
-        height: 92vh;
+        height: 80vh;
+        margin-top: 10vh;
     }
-
+  
     #head {
         height: 92vh;
     }

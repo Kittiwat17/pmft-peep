@@ -5,7 +5,7 @@ html, body {
 }
 
 .body-page {
-    height: 90%;
+    height: 92vh;
 }
 
 #head {
@@ -15,7 +15,7 @@ html, body {
 
 #login {
     background-color: #ffffff;
-    height: 90%;
+    height: 85vh;
     margin-top: 2vh;
 }
 
@@ -66,16 +66,25 @@ html, body {
 
 @media only screen and (min-height: 600px) and (max-width: 576px) {
     #login {
+        height: 83vh;
+        margin-top: 7vh;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+    #login {
+        height: 80vh;
         margin-top: 10vh;
     }
 }
 
 @media only screen and (min-width: 992px) {
     #login {
-        height: 90vh;
+        height: 85vh;
+        margin-top: 5vh;
     }
-
+  
     #head {
-        height: 92vh;
+        height: 91vh;
     }
 }
