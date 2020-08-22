@@ -76,7 +76,11 @@ function load_quagga() {
                     last_result = [];
                     // var audio = new Audio('audio_file.mp3');
                     // audio.play()
-                    alert(code);
+                    // alert(code);
+                    new Audio('../../sound/beep-sound.mp3').play();
+                    document.querySelector('.txt-modal')
+                    $('#correctModal').modal('show');
+                      
 
                 }
 

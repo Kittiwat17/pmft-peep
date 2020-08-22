@@ -1,12 +1,14 @@
 /* camera */
 #barcode-scanner canvas,video{
-    height: 40vh;
+    height: 60vh;
     width: 90%;
     margin: auto;
+    margin-top: 4%;
 }
 .drawingBuffer{
     position: relative;
-    top: -40vh;
+    top: -60vh;
+    margin-top: 4%;
 }
 
 /* css */
