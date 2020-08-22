@@ -8,6 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBDRYARpwS9EkKaX-SaMdN8hmssV6-mfQ&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Map</title>
@@ -23,17 +28,24 @@
             <div class="col text-center">
                 <p class="h1">เลือกโลเคชั่นของคุณ</p>
                 <br>
-                <form action="">
+                <form onsubmit="return notRefresh(event)">
                     <div class="form-group row" id="form-frame">
                         <div class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3" id="location">
                             <input type="text" class="form-control" placeholder="ใส่สถานที่ของคุณ" id="location-input">
                         </div>
                     </div>
-                    <button type="button" class="btn" id="button">ยืนยัน</button>
+                    <button type="button" class="btn" id="button" onclick="setLatLngToDatabase()">ยืนยัน</button>
                 </form>
             </div>
         </div>
     </div>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <!--Script App Google-->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="../Javascript/init-firebase.js"></script>
+    <script src="../Javascript/Map.js"></script>
+    <!-- Initialize Firebase -->
 </body>
 
 </html>
