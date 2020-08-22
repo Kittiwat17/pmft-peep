@@ -52,12 +52,18 @@ html, body {
     margin-bottom: 1vmax;
 }
 
-.btn {
+.submit-btn {
+    width: 12em;
     background-color: #868686;
     color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 10px 10px;
 }
 
-.btn:hover {
+.submit-btn:hover {
     background-color: #666666;
     color: #ffffff;
 }
