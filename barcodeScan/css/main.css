@@ -11,6 +11,21 @@
     margin-top: 4%;
 }
 
+#flip-btn {
+    width: 10vmax;
+    height: 10vmax;
+    border: none;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#flip-btn img {
+    width: 100%;
+}
+
 /* css */
 body {
     font-family: 'Kanit', sans-serif;
@@ -18,7 +33,7 @@ body {
 }
 
 .head-page {
-    height: 6vh;
+    height: 8vh;
     background-color: #3EC6FF;
 }
 
@@ -29,8 +44,9 @@ body {
 }
 
 .scan-page {
-    height: 69vh;
+    height: 67vh;
     background-color: #3EC6FF;
+    position: relative;
 }
 
 .button-page {
