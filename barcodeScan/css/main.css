@@ -1,14 +1,13 @@
 /* camera */
 #barcode-scanner canvas,video{
     height: 60vh;
-    width: 90%;
+    width: 60vw;
     margin: auto;
-    margin-top: 4%;
+    margin-top: 1vh;
 }
 .drawingBuffer{
     position: relative;
     top: -60vh;
-    margin-top: 4%;
 }
 
 #flip-btn {

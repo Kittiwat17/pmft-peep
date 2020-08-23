@@ -42,20 +42,20 @@ function load_quagga() {
                 var drawingCtx = Quagga.canvas.ctx.overlay,
                     drawingCanvas = Quagga.canvas.dom.overlay;
 
-                if (result) {
-                    if (result.boxes) {
-                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                // if (result) {
+                //     if (result.boxes) {
+                //         drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
 
-                    }
+                //     }
 
-                    if (result.box) {
-                        Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#000", lineWidth: 4 });
-                    }
+                //     if (result.box) {
+                //         Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#000", lineWidth: 4 });
+                //     }
 
-                    if (result.codeResult && result.codeResult.code) {
-                        Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 5 });
-                    }
-                }
+                //     if (result.codeResult && result.codeResult.code) {
+                //         Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 5 });
+                //     }
+                // }
             });
 
             Quagga.onDetected(function (result) {
@@ -96,9 +96,9 @@ function load_quagga() {
                 name: "Live",
                 type: "LiveStream",
                 constraints: {
-                    width: 640,
-                    height: 480,
-                    facing: shouldFaceUser ? "user" : "environment"
+                    width: 500,
+                    height: 1000,
+                    facingMode: shouldFaceUser ? "user" : "environment"
                 },
                 target: document.querySelector('#barcode-scanner'),
                 area: { // defines rectangle of the detection/localization area
@@ -155,10 +155,10 @@ function load_quagga() {
             // var x1 = 
             console.log(ctx.canvas.width);
             ctx.beginPath();
-            ctx.lineWidth = "6";
-            ctx.strokeStyle = "#49f";  // Green path
-            ctx.moveTo(ctx.canvas.width / 3.5, ctx.canvas.height / 2);
-            ctx.lineTo(ctx.canvas.width / 2 + ctx.canvas.width / 5, ctx.canvas.height / 2);
+            ctx.lineWidth = "7";
+            ctx.strokeStyle = "#f00";  // Green path
+            ctx.moveTo(ctx.canvas.width / 6 * 2, ctx.canvas.height / 2);
+            ctx.lineTo((ctx.canvas.width / 6)*4, ctx.canvas.height / 2);
             ctx.stroke();  // Draw it
         });
 
