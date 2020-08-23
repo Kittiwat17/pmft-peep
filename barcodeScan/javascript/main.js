@@ -82,9 +82,9 @@ function load_quagga() {
     
                     document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : '+ code;
      
-                        $('#correctModal').modal('show');
+                    $('#correctModal').modal('show');
                 
-                    setTimeout(load_quagga(), 10000);
+                    setTimeout(load_quagga(), 3000);
 
                 }
 
