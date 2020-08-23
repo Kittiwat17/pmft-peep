@@ -39,15 +39,15 @@
         </div>
 
         <!-- Warning Modal -->
-        <div class="modal fade" id="warningModal" data-backdrop="static" data-keyboard="false" 
-            tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+        <div class="modal fade" id="warningModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered " role="document">
                 <div class="modal-content">
                     <div class="modal-body container-fluid">
                         <div class="pic">
                             <img src="../pic/warning-icon.png" alt="warning" width="150rem">
                             <p class="txt-modal">ข้อมูลที่คุณกรอกทั้งหมดจะสูญหาย</p>
-                            </div>
+                        </div>
                         <div class="row justify-content-around">
                             <div class="btn-box col-5 col-lg-4 text-center">
                                 <!-- !!! กดแล้วย้อนกลับไปหน้าก่อน -->
@@ -104,7 +104,8 @@
             <!-- 2 -> กลับหน้าหลัก -->
             <div class="col-12">
                 <div class="btn-box col-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3 text-center">
-                    <button type="button" class="button-1" onClick="location.href='../index.html'">กลับสู่หน้าหลัก</button>
+                    <button type="button" class="button-1"
+                        onClick="location.href='../index.html'">กลับสู่หน้าหลัก</button>
                 </div>
             </div>
 
@@ -114,16 +115,19 @@
 
     <!-- script -->
     <script type="text/javascript">
-        
+
         //random number
         function getRandomArbitrary() {
             min = 0;
             max = 99999999;
             num = Math.random() * (max - min) + min;
             set = Math.round(num);
-            n = set.toString();
+            num2 = set.toString();
+            last4Digits = num2.slice(-7);
+            finish_num = last4Digits.padStart(num2.length, '0');
+            console.log(finish_num);
             console.log("ok");
-            return n;
+            return finish_num;
         }
 
         // barcode generate
