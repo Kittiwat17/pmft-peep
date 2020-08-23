@@ -8,10 +8,21 @@ body {
     background-color: #3EC6FF;
 }
 
+.backpage-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: calc(12px + (26 - 12) * ((100vw - 320px) / (1600 - 320)));
+    position: absolute;
+    top: 10%;
+    left: 0px;
+}
+
 .head-text {
     color: white;
     margin-top: 1.5vh;
     font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    position: relative;
 }
 
 .barcode-page {
