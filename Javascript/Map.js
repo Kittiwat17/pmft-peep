@@ -107,9 +107,11 @@ function setLatLngToDatabase(){
     if (user) {
       // User is signed in.
       firebase.database().ref("users-store/" + user.uid).update({"location": {"lat":latitude,"lng":longitude}})
-      console.log(user)
+      window.location.href = "../barcodeScan"
     } else {
       // No user is signed in.
+      alert("ลงทะเบียนไม่สำเร็จ")
+      window.location.href = "../Map/index.html";
     }
   });
 }
