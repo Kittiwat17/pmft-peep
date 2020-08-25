@@ -3,10 +3,13 @@ console.log(Quagga);
 var scanner = document.getElementById('barcode-scanner');
 flipBtn = document.querySelector('#flip-btn');
 
+
 let supports = navigator.mediaDevices.getSupportedConstraints();
 if (supports['facingMode'] === true) {
     flipBtn.disabled = false;
 }
+
+
 
 shouldFaceUser = true;
 
@@ -59,6 +62,7 @@ function load_quagga() {
             });
 
             Quagga.onDetected(function (result) {
+                var user = firebase.auth().currentUser;
                 console.log('detected');
                 var last_code = result.codeResult.code;
                 console.log(last_code + '/n');
@@ -79,11 +83,42 @@ function load_quagga() {
                     // alert(code);
                     new Audio('../../sound/beep-sound.mp3').play();
                     Quagga.stop();
-    
-                    document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : '+ code;
-     
+                    if (user) {
+                        var uid = user.uid;
+                        //user in system
+                        var path = firebase.database().ref('users-store/' + uid)
+                        path.once('value').then(function (snapshot) {
+                            var a = snapshot.child("customer").exists();
+                            if (a) {
+                                var customerArray = firebase.database().ref("users-store/" + uid + '/customer').once('value').val();
+                                if (customerArray.includes(code)) {
+                                    const index = array.indexOf(code);
+                                    if (index > -1) {
+                                        array.splice(index, 1);
+                                    }
+                                    database.ref("users-store/" + uid + "/customer").update({ customer: customerArray })
+                                }else{
+                                    customerArray.push(code)
+                                    database.ref("users-store/" + uid + "/customer").update({ customer: customerArray })
+                                }
+
+                            } else {
+                                var customer = []
+                                customer.push(code)
+                                firebase.database().ref("users-store/" + uid).push().set({
+                                    'customer' : customer
+                                })
+                            }
+                        })
+                    } else {
+                        alert("Please login again")
+                        window.location.href = "../../index.html"
+                    }
+
+                    document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : ' + code;
+
                     $('#correctModal').modal('show');
-                
+
                     setTimeout(load_quagga(), 3000);
 
                 }
@@ -158,7 +193,7 @@ function load_quagga() {
             ctx.lineWidth = "7";
             ctx.strokeStyle = "#f00";  // Green path
             ctx.moveTo(ctx.canvas.width / 6 * 2, ctx.canvas.height / 2);
-            ctx.lineTo((ctx.canvas.width / 6)*4, ctx.canvas.height / 2);
+            ctx.lineTo((ctx.canvas.width / 6) * 4, ctx.canvas.height / 2);
             ctx.stroke();  // Draw it
         });
 

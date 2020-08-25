@@ -20,6 +20,7 @@ function login(e) {
       // document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
     }).then(
+      window.location.href = "../barcodeScan"
         
     );
   
