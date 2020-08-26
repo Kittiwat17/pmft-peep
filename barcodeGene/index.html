@@ -51,7 +51,7 @@
                         <div class="row justify-content-around">
                             <div class="btn-box col-5 col-lg-4 text-center">
                                 <!-- !!! กดแล้วย้อนกลับไปหน้าก่อน -->
-                                <button type="button" class="back-btn" onClick="">ยืนยัน</button>
+                                <button type="button" class="back-btn" onClick="deleteUser(sessionStorage.getItem('randomNum'))">ยืนยัน</button>
                             </div>
                             <div class="btn-box col-5 col-lg-4 text-center">
                                 <button type="button" class="cancel-btn" data-dismiss="modal">ยกเลิก</button>
@@ -166,6 +166,12 @@
 
 
     </script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <!--Script App Google-->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="../Javascript/init-firebase.js"></script>
+    <script defer src="../Javascript/CreateUser.js"></script>
 </body>
 
 </html>
