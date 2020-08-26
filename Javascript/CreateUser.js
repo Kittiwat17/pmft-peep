@@ -15,7 +15,10 @@ function registerEmail(e) {
       // [START_EXCLUDE]
       if (errorCode == "auth/weak-password") {
         alert("The password is too weak.");
-      } else {
+      } else if (errorCode == "auth/email-already-in-use") {
+        alert("มีผู้ใช้นี้ในระบบแล้ว")
+      }
+      else {
         alert(errorMessage);
       }
       console.log(error);
@@ -151,4 +154,9 @@ function checkInOutOutside(code) {
     alert("Please login again")
     window.location.href = "../../index.html"
   }
+}
+
+function deleteUser(uid){
+  firebase.database().ref("outside-user/"+uid).remove()
+  window.location.href="../register"
 }
