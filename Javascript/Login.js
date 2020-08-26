@@ -2,7 +2,6 @@ function login(e) {
   var email = document.getElementById("emailForm").value;
   var password = document.getElementById("passwordForm").value;
   console.log(email,password)
-  e.preventDefault();
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
@@ -19,9 +18,11 @@ function login(e) {
       console.log(error);
       // document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
-    }).then(
+    }).then(()=>{
       window.location.href = "../barcodeScan"
-        
+      console.log(firebase.auth().currentUser)
+    }
     );
+    e.preventDefault();
   
 }

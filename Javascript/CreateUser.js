@@ -83,3 +83,10 @@ function getRandomArbitrary() {
   console.log("ok");
   return finish_num;
 }
+
+
+function logout(){
+  firebase.auth().signOut().then(()=>{
+    window.location.href = "../index.html"
+  })
+}
