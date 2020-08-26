@@ -1,0 +1,65 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+}
+
+.head-page {
+    height: 6vh;
+    background-color: #3EC6FF;
+}
+
+.header {
+    position: relative;
+}
+
+.backpage-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: calc(12px + (26 - 12) * ((100vw - 320px) / (1600 - 320)));
+    position: absolute;
+    top: 10%;
+    left: 0px;
+}
+
+.check-page {
+    height: 94vh;
+    background-color: #3EC6FF;
+}
+
+.search-page {
+    height: 94vh;
+    color: white;
+    font-size: calc(18px + (34 - 18) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.txt {
+    color: white;
+    font-size: calc(14px + (28 - 14) * ((100vw - 320px) / (1600 - 320)));
+}
+
+#form-check {
+    margin-top: 1em;
+    height: 27vh;
+}
+
+.submit-btn {
+    width: 7em;
+    background-color: #3EFFA2;
+    color: #000000;
+    border: none;
+    border-radius: 0.5em;
+    font-size: calc(14px + (22 - 14) * ((100vw - 320px) / (1600 - 320)));
+    text-align: center;
+    padding: 5px 5px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.5);
+}
+
+.white {
+    height: 48vh;
+    margin: 3vh 2vw;
+    background-color: #ffffff;
+    border-radius: 2em;
+}
