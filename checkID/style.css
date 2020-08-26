@@ -63,3 +63,14 @@ body {
     background-color: #ffffff;
     border-radius: 2em;
 }
+
+/* modal */
+.pic {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.txt-modal {
+    font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    margin-top: 1rem;
+}
