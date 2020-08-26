@@ -21,17 +21,17 @@ function registerEmail(e) {
       console.log(error);
 
       // [END_EXCLUDE]
-    }).then(() => {
-      var user = firebase.auth().currentUser;
-      if (user) {
-        var uid = user.uid;
+    }).then((cred) => {
+      if (cred) {
+        var user = firebase.auth().currentUser;
+        if (user) {
+          var uid = user.uid;
+        }
+        writeUserData(nameStore, email, uid)
+        window.location.href = "../Map/index.html";
       }
-      writeUserData(nameStore, email, uid)
-      // window.location.href = "../Map/index.html";
-    }).then(() => {
-      window.location.href = "../Map/index.html";
     })
-    e.preventDefault();
+  e.preventDefault();
 }
 
 
@@ -64,11 +64,11 @@ function createOutsideUser(e) {
       lastName: lastName,
       email: email,
       number: randomNum
-    }).then(()=>{
+    }).then(() => {
       console.log('registered')
-      window.location.href="../barcodeGene"
+      window.location.href = "../barcodeGene"
     });
-  
+
 }
 
 function getRandomArbitrary() {
@@ -85,21 +85,21 @@ function getRandomArbitrary() {
 }
 
 
-function logout(){
-  firebase.auth().signOut().then(()=>{
+function logout() {
+  firebase.auth().signOut().then(() => {
     window.location.href = "../index.html"
   })
 }
 
-function checkUser(e){
-  firebase.database().ref("outside-user").once('value',function(snapshot){
+function checkUser(e) {
+  firebase.database().ref("outside-user").once('value', function (snapshot) {
     var list = snapshot.val()
-    var numberID = document.getElementById("id-input").value  
-    if (numberID in list){
+    var numberID = document.getElementById("id-input").value
+    if (numberID in list) {
       // if has data
       // console.log('True')
       checkInOutOutside(numberID);
-    }else{
+    } else {
       //if not has data in list
       // console.log('False')
       alert("ไม่มีเลขนี้ในระบบ")
@@ -113,42 +113,42 @@ function checkUser(e){
 function checkInOutOutside(code) {
   var user = firebase.auth().currentUser;
   if (user) {
-      var uid = user.uid;
-      //user in system
-      var path = firebase.database().ref('users-store/' + uid)
-      path.once('value').then(function (snapshot) {
-          var a = snapshot.child("customer").exists();
-          if (a) {
-              firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
-                  var temp = snapshot.val()
-                  console.log(temp)
-                  if (temp.includes(code)) {
-                      console.log(temp)
-                      const index = temp.indexOf(code);
-                      if (index > -1) {
-                          temp.splice(index, 1);
-                      }
-                      database.ref("users-store/" + uid).update({ customer: temp })
-                  } else {
-                      temp.push(code)
-                      console.log(temp)
-                      database.ref("users-store/" + uid).update({ customer: temp })
-                  }
-              });
-
-
-
+    var uid = user.uid;
+    //user in system
+    var path = firebase.database().ref('users-store/' + uid)
+    path.once('value').then(function (snapshot) {
+      var a = snapshot.child("customer").exists();
+      if (a) {
+        firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
+          var temp = snapshot.val()
+          console.log(temp)
+          if (temp.includes(code)) {
+            console.log(temp)
+            const index = temp.indexOf(code);
+            if (index > -1) {
+              temp.splice(index, 1);
+            }
+            database.ref("users-store/" + uid).update({ customer: temp })
           } else {
-              var customer = []
-              customer.push(code)
-              console.log(customer)
-              firebase.database().ref("users-store/" + uid).update({
-                  'customer': customer
-              })
+            temp.push(code)
+            console.log(temp)
+            database.ref("users-store/" + uid).update({ customer: temp })
           }
-      })
+        });
+
+
+
+      } else {
+        var customer = []
+        customer.push(code)
+        console.log(customer)
+        firebase.database().ref("users-store/" + uid).update({
+          'customer': customer
+        })
+      }
+    })
   } else {
-      alert("Please login again")
-      window.location.href = "../../index.html"
+    alert("Please login again")
+    window.location.href = "../../index.html"
   }
 }
