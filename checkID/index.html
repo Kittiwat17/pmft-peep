@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
 
     <title>Check ID</title>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- head -->
@@ -34,43 +36,73 @@
                 <hr style="border-bottom: 2px solid #DDDDDD;
                 margin-top: 0;
                 margin-bottom: 0;">
-                <form action="" id="form-check">
+                <form id="form-check">
                     <div class="form-group row">
                         <label for="firstName" class="col-3 col-md-2 offset-md-3 col-form-label txt">ชื่อจริง</label>
                         <div class="col-9 col-md-4">
-                          <input type="text" class="form-control" id="firstName">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="lastName" class="col-3 col-md-2 offset-md-3 col-form-label txt">นามสกุล</label>
-                        <div class="col-9 col-md-4">
-                          <input type="text" class="form-control" id="lastName">
+                            <input type="text" class="form-control" id="firstName">
                         </div>
                     </div>
-                    <button type="submit" class="btn submit-btn">ยืนยัน</button>
-                </form>
-                
-                <!-- ดึงข้อมูลจาก firebase -->
-                <div class="white"></div>
-
-            </div>
-        </div>
-
-        <!-- Failed Modal -->
-        <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" 
-            aria-labelledby="failedModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="pic">
-                            <img src="../pic/failed-icon.png" alt="failed" width="50%">
-                            <p class="txt-modal">ไม่พบข้อมูลในระบบ</p>
-                            <p class="txt-modal">กรุณาลงทะเบียนบุคคลภายนอก</p>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-3 col-md-2 offset-md-3 col-form-label txt">นามสกุล</label>
+                        <div class="col-9 col-md-4">
+                            <input type="text" class="form-control" id="lastName">
                         </div>
+                    </div>
+                    <button type="button" id="accept" class="btn submit-btn">ยืนยัน</button>
+                </form>
+
+                <!-- ดึงข้อมูลจาก firebase -->
+                <div class="white">
+                    <div id="contain">
+                        <label>ข้อมูลของคุณ</label>
+                        <hr style="border-bottom: 2px solid #000;margin: 1em;
+                                margin-top: 0;
+                                margin-bottom: 0;">
+                        <table id="textBarcodeShow" class="ml-3">
+                            <tbody>
+                                <tr>
+                                    <td>ชื่อจริง</td>
+                                    <td class="pl-3 pr-3">:</td>
+                                    <td id="fname">O</td>
+                                </tr>
+                                <tr>
+                                    <td>นามสกุล</td>
+                                    <td>:</td>
+                                    <td id="lname">Chanocha</td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail</td>
+                                    <td>:</td>
+                                    <td id="email"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <img id="showBarcode">
+                        <button class="saveImg btn rounded mt-3">บันทึกภาพ</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Failed Modal -->
+    <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" aria-labelledby="failedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="pic">
+                        <img src="../pic/failed-icon.png" alt="failed" width="50%">
+                        <p class="txt-modal">ไม่พบข้อมูลในระบบ</p>
+                        <p class="txt-modal">กรุณาลงทะเบียนบุคคลภายนอก</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </body>
+<script src="script.js"></script>
+
 </html>
