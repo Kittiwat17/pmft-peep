@@ -1,5 +1,4 @@
 function registerEmail(e) {
-  e.preventDefault();
   var email = document.getElementById("email").value;
   var password = document.getElementById("passwordForm").value;
   var nameStore = document.getElementById("storeNameForm").value;
@@ -32,6 +31,7 @@ function registerEmail(e) {
     }).then(() => {
       window.location.href = "../Map/index.html";
     })
+    e.preventDefault();
 }
 
 
