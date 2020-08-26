@@ -188,13 +188,12 @@ function checkInOut(code) {
     var user = firebase.auth().currentUser;
     if (user) {
         var uid = user.uid;
-        var temp
         //user in system
         var path = firebase.database().ref('users-store/' + uid)
         path.once('value').then(function (snapshot) {
             var a = snapshot.child("customer").exists();
             if (a) {
-                var customerArray = firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
+                firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
                     var temp = snapshot.val()
                     console.log(temp)
                     if (temp.includes(code)) {

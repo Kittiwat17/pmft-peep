@@ -28,18 +28,20 @@
         <div class="h-100 row align-items-center" id="IDcard-row">
             <div class="col text-center">
                 <p class="h1">กรุณากรอกเลขประจำตัวผู้มาใช้บริการ</p>
-                <form action="">
+                <form onsubmit="return checkUser(event)">
                     <div class="form-group row" id="form-frame">
                         <div class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3" id="ID-Card">
-                            <input type="text" class="form-control" placeholder="ID Card" id="id-input" pattern="[0-9]{13}" title="Please insert ID Card 13 digits : XXXXXXXXXXXXX">
-                        </div>
+                            <input type="text" class="form-control" placeholder="ID Card" id="id-input"
+                                 title="Please insert ID Card 13 digits : XXXXXXXXXXXXX">
+                                 <!-- pattern="[0-9]{13}" -->
+                                </div>
                     </div>
                     <button type="submit" class="btn" id="button">ยืนยัน</button>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <!-- Correct Modal -->
     <div class="modal fade" id="correctModal" tabindex="-1" role="dialog" aria-labelledby="correctModalLabel"
         aria-hidden="true">
@@ -54,7 +56,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Failed Modal -->
     <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" aria-labelledby="failedModalLabel"
         aria-hidden="true">
@@ -69,7 +71,13 @@
             </div>
         </div>
     </div>
-    
+    <!--Javascript-->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <!--Script App Google-->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="../Javascript/init-firebase.js"></script>
+    <script defer src="../Javascript/CreateUser.js"></script>
 </body>
 
 <script>
