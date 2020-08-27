@@ -19,42 +19,46 @@
 
 <body>
     <div class="container-fluid">
-        <!-- head -->
-        <div class="head-page row">
-            <div class="header col-12 text-center">
+        <div class="row">
+            <!-- head -->
+            <div class="head-page col-12 text-center">
                 <!-- !! ย้อนกลับ -->
                 <button type="button" class="backpage-btn" onClick="location.href=''">
                     ← ย้อนกลับ
                 </button>
             </div>
-        </div>
 
-        <!-- Check ID -->
-        <div class="check-page row">
-            <div class="search-page col-12 text-center">
-                <label>ตรวจสอบเลขประจำตัวของคุณ</label>
-                <hr style="border-bottom: 2px solid #DDDDDD;
-                margin-top: 0;
-                margin-bottom: 0;">
-                <form id="form-check">
-                    <div class="form-group row">
-                        <label for="firstName" class="col-3 col-md-2 offset-md-3 col-form-label txt">ชื่อจริง</label>
-                        <div class="col-9 col-md-4">
-                            <input type="text" class="form-control" id="firstName">
+            <!-- Check ID -->
+            <div class="check-page col-12">
+                <div class="search-page text-center">
+                    <label>ตรวจสอบเลขประจำตัวของคุณ</label>
+                    <hr style="border-bottom: 2px solid #DDDDDD;
+                    margin-top: 0;
+                    margin-bottom: 0;">
+                    <form id="form-check">
+                        <div class="form-group row">
+                            <label for="firstName" class="col-3 col-md-2 offset-md-3 col-form-label txt">ชื่อจริง</label>
+                            <div class="col-9 col-md-4">
+                                <input type="text" class="form-control" id="firstName">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lastName" class="col-3 col-md-2 offset-md-3 col-form-label txt">นามสกุล</label>
-                        <div class="col-9 col-md-4">
-                            <input type="text" class="form-control" id="lastName">
+                        <div class="form-group row">
+                            <label for="lastName" class="col-3 col-md-2 offset-md-3 col-form-label txt">นามสกุล</label>
+                            <div class="col-9 col-md-4">
+                                <input type="text" class="form-control" id="lastName">
+                            </div>
                         </div>
-                    </div>
-                    <button type="button" id="accept" class="btn submit-btn">ยืนยัน</button>
-                </form>
+                        <button type="button" id="accept" class="btn submit-btn">ยืนยัน</button>
+                    </form>
+                </div>
 
-                <!-- ดึงข้อมูลจาก firebase -->
+                
+            </div>
+            
+            <!-- ดึงข้อมูลจาก firebase -->
+            <div class="data-page col-12">
                 <div class="white">
-                    <div id="contain">
+                    <div id="contain" class=" text-center">
                         <label>ข้อมูลของคุณ</label>
                         <hr style="border-bottom: 2px solid #000;margin: 1em;
                                 margin-top: 0;
@@ -83,24 +87,28 @@
                     </div>
                 </div>
             </div>
-
         </div>
+        
+
+        
+    
+        
     </div>
 
-    <!-- Failed Modal -->
-    <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" aria-labelledby="failedModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="pic">
-                        <img src="../pic/failed-icon.png" alt="failed" width="50%">
-                        <p class="txt-modal">ไม่พบข้อมูลในระบบ</p>
-                        <p class="txt-modal">กรุณาลงทะเบียนบุคคลภายนอก</p>
+        <!-- Failed Modal -->
+        <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" aria-labelledby="failedModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="pic">
+                            <img src="../pic/failed-icon.png" alt="failed" width="50%">
+                            <p class="txt-modal">ไม่พบข้อมูลในระบบ</p>
+                            <p class="txt-modal">กรุณาลงทะเบียนบุคคลภายนอก</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 <script src="script.js"></script>
