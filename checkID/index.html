@@ -26,7 +26,7 @@
             <!-- head -->
             <div class="head-page col-12 text-center">
                 <!-- !! ย้อนกลับ -->
-                <button type="button" class="backpage-btn" onClick="location.href=''">
+                <button type="button" class="backpage-btn" onClick="location.href='../index.html'">
                     ← ย้อนกลับ
                 </button>
             </div>
@@ -61,44 +61,52 @@
             <!-- ดึงข้อมูลจาก firebase -->
             <div class="data-page col-12">
                 <div class="white">
-                    <div id="contain" class=" text-center">
+                    <div id="contain" class="text-center">
                         <label>ข้อมูลของคุณ</label>
                         <hr style="border-bottom: 2px solid #000;margin: 1em;
                                 margin-top: 0;
                                 margin-bottom: 0;">
                         
-                        <div class="row">
-                            <div class="textshow col-12 col-sm-6 col-lg-4"></div>
-                            <div class="barcodeshow col-12 col-sm-6 col-lg-8">
-                                <div class="row">
-                                    <div class="bar-img col-12 col-lg-6"></div>
-                                    <div class="save-img col-12 col-lg-6"></div>
+                        <div class="row show-row">
+                            <div class="textshow d-flex justify-content-center align-items-center
+                                col-12 col-sm-6 col-lg-4 no-float text-center">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>ชื่อจริง</td>
+                                            <td class="pl-3 pr-3">:</td>
+                                            <td id="fname">...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>นามสกุล</td>
+                                            <td>:</td>
+                                            <td id="lname">...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-mail</td>
+                                            <td>:</td>
+                                            <td id="email">...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="barcodeshow col-12 col-sm-6 col-lg-8 no-float">
+                                <div class="row h-100">
+                                    <div class="bar-img col-12 col-lg-6 align-self-center">
+                                        <img id="showBarcode">
+                                    </div>
+                                    <div class="save-img col-12 col-lg-6 align-self-center">
+                                        <a class="saveImg" download>
+                                            <button class="saveImg btn rounded">บันทึกภาพ</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <table id="textBarcodeShow" class="ml-3">
-                            <tbody>
-                                <tr>
-                                    <td>ชื่อจริง</td>
-                                    <td class="pl-3 pr-3">:</td>
-                                    <td id="fname">O</td>
-                                </tr>
-                                <tr>
-                                    <td>นามสกุล</td>
-                                    <td>:</td>
-                                    <td id="lname">Chanocha</td>
-                                </tr>
-                                <tr>
-                                    <td>E-mail</td>
-                                    <td>:</td>
-                                    <td id="email"></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                        <!-- 
                         <img id="showBarcode">
-                        <a class="saveImg" download>
-                            <button class="saveImg btn rounded mt-3">บันทึกภาพ</button>
-                        </a>
+                         -->
                     </div>
                 </div>
             </div>

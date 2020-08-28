@@ -20,7 +20,6 @@ body {
 }
 
 .check-page {
-  height: 37vh;
   position: relative;
   margin-bottom: 2vh;
 }
@@ -37,7 +36,6 @@ body {
 
 #form-check {
   margin-top: 1em;
-  height: 27vh;
 }
 
 .submit-btn {
@@ -90,32 +88,28 @@ body {
   height: 100%;
   border-radius: 2em;
   padding: 1em 1em;
-  font-size: calc(12px + (24 - 12) * ((100vw - 320px) / (1600 - 320)));
+  font-size: calc(12px + (26 - 12) * ((100vw - 320px) / (1600 - 320)));
 }
 
-#textBarcodeShow {
-  margin: 1vh auto;
+.show-row {
+  height: 90%;
 }
+
+.textshow {
+  padding: 1vh 1vw;
+  /* margin: auto 0; */
+}
+
 
 #showBarcode {
   background-color: rgb(95, 95, 95);
   width: 12em;
-  height: 100px;
-  margin-top: 1em;
+  height: 7em;
 }
 
 .saveImg {
   background-color: #3ec6ff;
-  width: 12em;
+  color: #ffffff;
+  width: 70%;
+  font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1600 - 320)));
 }
-
-/* @media only screen and (min-width: 992px) {
-    #login {
-        height: 85vh;
-        margin-top: 5vh;
-    }
-  
-    #head {
-        height: 91vh;
-    }
-} */
