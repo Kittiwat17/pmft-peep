@@ -19,8 +19,10 @@ function login(e) {
       // document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
     }).then(()=>{
+      if(firebase.auth().currentUser){
       window.location.href = "../barcodeScan"
-      console.log(firebase.auth().currentUser)
+      }
+      // console.log(firebase.auth().currentUser)
     }
     );
     e.preventDefault();
