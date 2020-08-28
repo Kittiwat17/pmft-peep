@@ -59,18 +59,46 @@ function createOutsideUser(e) {
   var firstName = document.getElementById("firstNameValue").value
   var lastName = document.getElementById("lastNameValue").value
   var email = document.getElementById("emailValue").value
-  firebase
-    .database()
-    .ref("outside-user/" + randomNum)
-    .set({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      number: randomNum
-    }).then(() => {
-      console.log('registered')
-      window.location.href = "../barcodeGene"
+  var checkDatabase = 0
+  firebase.database().ref("outside-user").once('value', function (snapshot) {
+    var list = snapshot.val()
+    Object.keys(list).forEach(function(key) {
+      // console.log(key, list[key].firstName);
+      if(list[key].firstName == firstName && list[key].lastName == lastName){
+        checkDatabase = 1
+      }
     });
+    if(checkDatabase == 1){
+      alert("มีผู้ใช้นี้ในระบบแล้ว")
+    }else{
+      firebase
+      .database()
+      .ref("outside-user/" + randomNum)
+      .set({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        number: randomNum
+      }).then(() => {
+        console.log('registered')
+        window.location.href = "../barcodeGene"
+      });
+  
+    }
+  })
+
+  // firebase
+  //   .database()
+  //   .ref("outside-user/" + randomNum)
+  //   .set({
+  //     firstName: firstName,
+  //     lastName: lastName,
+  //     email: email,
+  //     number: randomNum
+  //   }).then(() => {
+  //     console.log('registered')
+  //     window.location.href = "../barcodeGene"
+  //   });
 
 }
 
