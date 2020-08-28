@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Check ID</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- head -->
+            <div class="head-page col-12 text-center">
+                <!-- !! ย้อนกลับ -->
+                <button type="button" class="backpage-btn" onClick="location.href=''">
+                    ← ย้อนกลับ
+                </button>
+            </div>
+
+            <!-- Check ID -->
+            <div class="check-page col-12">
+                <div class="search-page text-center">
+                    <label>ตรวจสอบเลขประจำตัวของคุณ</label>
+                    <hr style="border-bottom: 2px solid #DDDDDD;
+                    margin-top: 0;
+                    margin-bottom: 0;">
+                    <form id="form-check">
+                        <div class="form-group row">
+                            <label for="firstName" class="col-3 col-md-2 offset-md-3 col-form-label txt">ชื่อจริง</label>
+                            <div class="col-9 col-md-4">
+                                <input type="text" class="form-control" id="firstName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastName" class="col-3 col-md-2 offset-md-3 col-form-label txt">นามสกุล</label>
+                            <div class="col-9 col-md-4">
+                                <input type="text" class="form-control" id="lastName">
+                            </div>
+                        </div>
+                        <button type="button" id="accept" class="btn submit-btn">ยืนยัน</button>
+                    </form>
+                </div>
+
+                
+            </div>
+            
+            <!-- ดึงข้อมูลจาก firebase -->
+            <div class="data-page col-12">
+                <div class="white">
+                    <div id="contain" class=" text-center">
+                        <label>ข้อมูลของคุณ</label>
+                        <hr style="border-bottom: 2px solid #000;margin: 1em;
+                                margin-top: 0;
+                                margin-bottom: 0;">
+                        
+                        <div class="row">
+                            <div class="textshow col-12 col-sm-6 col-lg-4"></div>
+                            <div class="barcodeshow col-12 col-sm-6 col-lg-8">
+                                <div class="row">
+                                    <div class="bar-img col-12 col-lg-6"></div>
+                                    <div class="save-img col-12 col-lg-6"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="textBarcodeShow" class="ml-3">
+                            <tbody>
+                                <tr>
+                                    <td>ชื่อจริง</td>
+                                    <td class="pl-3 pr-3">:</td>
+                                    <td id="fname">O</td>
+                                </tr>
+                                <tr>
+                                    <td>นามสกุล</td>
+                                    <td>:</td>
+                                    <td id="lname">Chanocha</td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail</td>
+                                    <td>:</td>
+                                    <td id="email"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <img id="showBarcode">
+                        <button class="saveImg btn rounded mt-3">บันทึกภาพ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+    
+        
+    </div>
+
+        <!-- Failed Modal -->
+        <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" aria-labelledby="failedModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="pic">
+                            <img src="../pic/failed-icon.png" alt="failed" width="50%">
+                            <p class="txt-modal">ไม่พบข้อมูลในระบบ</p>
+                            <p class="txt-modal">กรุณาลงทะเบียนบุคคลภายนอก</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
