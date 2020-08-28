@@ -101,8 +101,8 @@ function load_quagga() {
                 name: "Live",
                 type: "LiveStream",
                 constraints: {
-                    width: 500,
-                    height: 1000,
+                    width: 600,
+                    height: 1200,
                     facingMode: shouldFaceUser ? "user" : "environment"
                 },
                 target: document.querySelector('#barcode-scanner'),
