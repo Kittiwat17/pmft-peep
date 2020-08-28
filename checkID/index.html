@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="style.css">
+    <!-- barcode -->
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+ 
 
     <title>Check ID</title>
 </head>
@@ -93,7 +96,9 @@
                             </tbody>
                         </table>
                         <img id="showBarcode">
-                        <button class="saveImg btn rounded mt-3">บันทึกภาพ</button>
+                        <a class="saveImg" download>
+                            <button class="saveImg btn rounded mt-3">บันทึกภาพ</button>
+                        </a>
                     </div>
                 </div>
             </div>
