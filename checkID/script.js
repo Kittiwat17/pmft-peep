@@ -1,7 +1,12 @@
 var acceptBtn = document.querySelector('#accept');
 var fnameBar, lnameBar, emailBar
 var fname, lname, email, codeID = '';
-var isFindUser = false;
+$('#failedModal').on('shown.bs.modal', function () {
+    $(this).delay(3000).fadeOut(300, function () {
+        $(this).modal('hide');
+    });
+})
+
 acceptBtn.addEventListener('click', () => {
     //ถ้าหาเจอทำif หาในระบบไม่เจอใช้else
     // query email & barcode on firebase
@@ -9,16 +14,17 @@ acceptBtn.addEventListener('click', () => {
     lname = document.querySelector("#lastName").value;
     firebase.database().ref("outside-user").once("value", function (snapshot) {
         var list = snapshot.val();
+        var targetUser = null;
         Object.keys(list).forEach(function (key) {
             console.log(list[key]);
             if (list[key].firstName == fname && list[key].lastName == lname) {
-                isFindUser = true;
-                var targetUser = list[key];
+             
+                targetUser = list[key];
                 codeID = targetUser.number;
                 return;
             }
         })
-        if (isFindUser) {
+        if (targetUser) {
             document.querySelector(".data-page").style.display = 'block';
             fnameBar = document.querySelector("#fname");
             lnameBar = document.querySelector("#lname");
@@ -33,12 +39,11 @@ acceptBtn.addEventListener('click', () => {
             var imgBarCode = document.querySelector('#showBarcode')
             var btnBarCode = document.querySelector('.saveImg').href = imgBarCode.src;
         } else {
+            // document.querySelector(".data-page").style.display = 'none';
             $("#failedModal").modal('show');
-            $('#failedModal').on('shown.bs.modal', function () {
-                $(this).delay(800).fadeOut(300, function () {
-                    $(this).modal('hide');
-                });
-            })
+            document.querySelector(".data-page").style.display = 'none';
+            
+            
         } 
     })
     // codeID = ไอดีของผู้ใช้
