@@ -63,7 +63,6 @@ function writeUserData(place, email, uid) {
 
 
 function createOutsideUser(e) {
-  e.preventDefault()
 
 
   var firstName = document.getElementById("firstNameValue").value
@@ -119,7 +118,7 @@ function createOutsideUser(e) {
   //     console.log('registered')
   //     window.location.href = "../barcodeGene"
   //   });
-
+  e.preventDefault()
 }
 
 function getRandomArbitrary() {
@@ -154,7 +153,7 @@ function checkUser(e) {
     } else {
       //if not has data in list
       // console.log('False')
-      alert("ไม่มีเลขนี้ในระบบ")
+      alert("ไม่มีเลขนี้ในระบบ กรุณาให้ผู้มาใช้บริการติดต่อสถานที่ หรือลงทะเบียนบุคคลภายนอก")
     }
   })
   e.preventDefault()

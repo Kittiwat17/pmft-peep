@@ -93,7 +93,7 @@ function load_quagga() {
                         } else {
                           //if not has data in list
                           // console.log('False')
-                          alert("ไม่มีเลขนี้ในระบบ")
+                          alert("ไม่มีเลขนี้ในระบบ กรุณาให้ผู้มาใช้บริการติดต่อสถานที่ หรือลงทะเบียนบุคคลภายนอก")
                         }
                       })    
 
