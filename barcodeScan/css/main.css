@@ -100,7 +100,13 @@ body {
     margin: 1rem auto;
 }
 
+/* Modal */
 .txt-modal {
     font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    margin-top: 1rem;
+}
+
+.txt-modal-1 {
+    font-size: calc(14px + (26 - 14) * ((100vw - 320px) / (1600 - 320)));
     margin-top: 1rem;
 }
