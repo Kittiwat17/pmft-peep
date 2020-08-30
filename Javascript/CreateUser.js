@@ -153,7 +153,12 @@ function checkUser(e) {
     } else {
       //if not has data in list
       // console.log('False')
-      alert("ไม่มีเลขนี้ในระบบ กรุณาให้ผู้มาใช้บริการติดต่อสถานที่ หรือลงทะเบียนบุคคลภายนอก")
+      $("#failedModal").modal('show');
+      $('#failedModal').on('shown.bs.modal', function () {
+        $(this).delay(800).fadeOut(300, function () {
+          $(this).modal('hide');
+        });
+      })
     }
   })
   e.preventDefault()
@@ -181,11 +186,23 @@ function checkInOutOutside(code) {
               temp.splice(index, 1);
             }
             database.ref("users-store/" + uid).update({ customer: temp })
+            $("#correctModal").modal('show');
+            $('#correctModal').on('shown.bs.modal', function () {
+                $(this).delay(800).fadeOut(300, function () {
+                    $(this).modal('hide');
+                });
+            })
           } else {
             //เช็คชื่อ เข้าจ้าา
             temp.push(code)
             console.log(temp)
             database.ref("users-store/" + uid).update({ customer: temp })
+            $("#logoutModal").modal('show');
+            $('#logoutModal').on('shown.bs.modal', function () {
+                $(this).delay(800).fadeOut(300, function () {
+                    $(this).modal('hide');
+                });
+            })
           }
         });
 
@@ -199,6 +216,12 @@ function checkInOutOutside(code) {
         firebase.database().ref("users-store/" + uid).update({
           'customer': customer
         })
+        $("#logoutModal").modal('show');
+        $('#logoutModal').on('shown.bs.modal', function () {
+            $(this).delay(800).fadeOut(300, function () {
+              $(this).modal('hide');
+            });
+          })
       }
     })
   } else {

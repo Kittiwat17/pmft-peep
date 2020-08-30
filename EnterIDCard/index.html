@@ -36,7 +36,7 @@
                             <input type="text" class="form-control" placeholder="ID Card" id="id-input"
                                  title="Please insert ID Card 13 digits : XXXXXXXXXXXXX">
                                  <!-- pattern="[0-9]{13}" -->
-                                </div>
+                        </div>
                     </div>
                     <button type="submit" class="btn" id="button">ยืนยัน</button>
                 </form>
@@ -46,13 +46,29 @@
 
     <!-- Correct Modal -->
     <div class="modal fade" id="correctModal" tabindex="-1" role="dialog" aria-labelledby="correctModalLabel"
-        aria-hidden="true">
+    aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pic">
                         <img src="../pic/correct-icon.png" alt="correct" width="50%">
-                        <p class="txt-modal">ล็อกอินสำเร็จ</p>
+                        <p class="txt-modal">เช็คอินผู้มาใช้บริการสำเร็จ</p>
+                        <p id="show-code">โค๊ดของคุณคือ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LogOut Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="pic">
+                        <img src="../pic/logout-icon.png" alt="logout" width="50%">
+                        <p class="txt-modal">เช็คเอ้าท์ผู้มาใช้บริการสำเร็จ</p>
                     </div>
                 </div>
             </div>
@@ -67,12 +83,13 @@
                 <div class="modal-body">
                     <div class="pic">
                         <img src="../pic/failed-icon.png" alt="failed" width="50%">
-                        <p class="txt-modal">ไม่พบข้อมูลผู้มาใช้บริการในระบบ</p>
+                        <p class="txt-modal">ไม่มีเลขนี้ในระบบ กรุณาให้ผู้มาใช้บริการติดต่อสถานที่ หรือลงทะเบียนบุคคลภายนอก</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!--Javascript-->
     <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
     <!--Script App Google-->
