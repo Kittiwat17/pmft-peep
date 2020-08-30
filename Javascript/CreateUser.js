@@ -174,6 +174,7 @@ function checkInOutOutside(code) {
           var temp = snapshot.val()
           console.log(temp)
           if (temp.includes(code)) {
+            //เช็คชื่อออกถ้าเจอเลขในCustomer
             console.log(temp)
             const index = temp.indexOf(code);
             if (index > -1) {
@@ -181,6 +182,7 @@ function checkInOutOutside(code) {
             }
             database.ref("users-store/" + uid).update({ customer: temp })
           } else {
+            //เช็คชื่อ เข้าจ้าา
             temp.push(code)
             console.log(temp)
             database.ref("users-store/" + uid).update({ customer: temp })
@@ -190,6 +192,7 @@ function checkInOutOutside(code) {
 
 
       } else {
+        //อันนี้เช็คชื่อเข้าเหมือนกัน 
         var customer = []
         customer.push(code)
         console.log(customer)
