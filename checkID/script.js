@@ -34,6 +34,11 @@ acceptBtn.addEventListener('click', () => {
             var btnBarCode = document.querySelector('.saveImg').href = imgBarCode.src;
         } else {
             $("#failedModal").modal('show');
+            $('#failedModal').on('shown.bs.modal', function () {
+                $(this).delay(800).fadeOut(300, function () {
+                    $(this).modal('hide');
+                });
+            })
         } 
     })
     // codeID = ไอดีของผู้ใช้
