@@ -1,107 +1,81 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Login</title>
-  </head>
-  <body>
-    <!-- nav bar -->
-    <nav class="navbar navbar-inverse navbar-light bg-white">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../storeRegister/index.html">ลงทะเบียนร้านค้า</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link disabled" href="#"
-              >เข้าสู่ระบบร้านค้า <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../register/index.html">ลงทะเบียนบุคคลภายนอก</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- end nav bar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="../pic/logo.ico" type="image/icon type">
+  <title>PEEEP Me!</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Login</title>
+</head>
 
-    <div class="body-page container-fluid">
-      <div class="row">
-        <!--Login column-->
-        <div class="col-12 col-lg-6 order-2 order-md-1 text-center" id="login">
-          <div class="img-box">
-            <img src="../pic/logo.png" alt="logo" width="100%">
-          </div>
-          <p class="h1">เข้าสู่ระบบสถานที่</p>
-          <p class="h2">เข้าสู่ระบบสำหรับเก็บข้อมูลเข้า - ออกของลูกค้า</p>
-          <form onsubmit="return login(event)">
-            <div class="form-group row" id="form-frame">
-              <div
-                class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3"
-                id="username"
-              >
-                <input
-                  id="emailForm"
-                  type="text"
-                  class="form-control"
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <div
-                class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3"
-                id="password"
-              >
-                <input
-                  id="passwordForm"
-                  type="password"
-                  class="form-control"
-                  placeholder="Password"
-                />
-              </div>
-            </div>
-            <button type="submit" class="btn submit-btn">เข้าสู่ระบบ</button>
-          </form>
-        </div>
-        <!--Header column-->
-        <div class="col-12 col-lg-6 order-1 order-md-2 text-center" id="head"></div>
-      </div>
+<body>
+  <!-- nav bar -->
+  <nav class="navbar navbar-inverse navbar-light bg-white">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../storeRegister/index.html">ลงทะเบียนร้านค้า</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link disabled" href="#">เข้าสู่ระบบร้านค้า <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../register/index.html">ลงทะเบียนบุคคลภายนอก</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+  <!-- end nav bar -->
 
-    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
-    <!--Script App Google-->
-    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
-    <script defer src="../Javascript/init-firebase.js"></script>
-    <!-- Initialize Firebase -->
-    <script defer src="../Javascript/Login.js"></script>
-  </body>
+  <div class="body-page container-fluid">
+    <div class="row">
+      <!--Login column-->
+      <div class="col-12 col-lg-6 order-2 order-md-1 text-center" id="login">
+        <div class="img-box">
+          <img src="../pic/logo.png" alt="logo" width="100%">
+        </div>
+        <p class="h1">เข้าสู่ระบบสถานที่</p>
+        <p class="h2">เข้าสู่ระบบสำหรับเก็บข้อมูลเข้า - ออกของลูกค้า</p>
+        <form onsubmit="return login(event)">
+          <div class="form-group row" id="form-frame">
+            <div class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3" id="username">
+              <input id="emailForm" type="text" class="form-control" placeholder="Email" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3" id="password">
+              <input id="passwordForm" type="password" class="form-control" placeholder="Password" />
+            </div>
+          </div>
+          <button type="submit" class="btn submit-btn">เข้าสู่ระบบ</button>
+        </form>
+      </div>
+      <!--Header column-->
+      <div class="col-12 col-lg-6 order-1 order-md-2 text-center" id="head"></div>
+    </div>
+  </div>
+
+  <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+  <!--Script App Google-->
+  <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+  <script defer src="../Javascript/init-firebase.js"></script>
+  <!-- Initialize Firebase -->
+  <script defer src="../Javascript/Login.js"></script>
+</body>
+
 </html>

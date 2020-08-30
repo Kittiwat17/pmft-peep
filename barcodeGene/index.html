@@ -7,6 +7,8 @@
         integrity="sha256-JDVyLQRqvRSTL/6WaPud93JXpfEdW11zwjqhoNgkGXc=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
         integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <link rel="icon" href="../pic/logo.ico" type="image/icon type">
+    <title>PEEEP Me!</title>
     <!-- Barcode -->
     <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
     <!-- bootstrap -->
@@ -51,7 +53,8 @@
                         <div class="row justify-content-around">
                             <div class="btn-box col-5 col-lg-4 text-center">
                                 <!-- !!! กดแล้วย้อนกลับไปหน้าก่อน -->
-                                <button type="button" class="back-btn" onClick="deleteUser(sessionStorage.getItem('randomNum'))">ยืนยัน</button>
+                                <button type="button" class="back-btn"
+                                    onClick="deleteUser(sessionStorage.getItem('randomNum'))">ยืนยัน</button>
                             </div>
                             <div class="btn-box col-5 col-lg-4 text-center">
                                 <button type="button" class="cancel-btn" data-dismiss="modal">ยกเลิก</button>
