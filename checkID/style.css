@@ -60,6 +60,7 @@ body {
 .data-page {
   height: 52vh;
   padding: 0 3vw;
+  display: none;
 }
 
 .white {

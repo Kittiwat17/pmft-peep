@@ -19,13 +19,13 @@ acceptBtn.addEventListener('click', () => {
             }
         })
         if (isFindUser) {
-
-
+            document.querySelector(".data-page").style.display = 'block';
             fnameBar = document.querySelector("#fname");
             lnameBar = document.querySelector("#lname");
             emailBar = document.querySelector("#email");
             fnameBar.innerHTML = fname;
             lnameBar.innerHTML = lname;
+            
             // emailBar.innerHTML = email;
 
 
