@@ -1,3 +1,13 @@
+var checkNum = (test,numIn) =>{
+  var num = getRandomArbitrary();
+  if (numIn in test){
+    console.log('มีเลขนี้ในระบบ')
+    return checkNum(test)
+  }
+  return num
+}
+
+
 function registerEmail(e) {
   var email = document.getElementById("email").value;
   var password = document.getElementById("passwordForm").value;
@@ -54,36 +64,46 @@ function writeUserData(place, email, uid) {
 
 function createOutsideUser(e) {
   e.preventDefault()
-  var randomNum = getRandomArbitrary();
-  sessionStorage.setItem("randomNum", randomNum);
+
+
   var firstName = document.getElementById("firstNameValue").value
   var lastName = document.getElementById("lastNameValue").value
   var email = document.getElementById("emailValue").value
   var checkDatabase = 0
   firebase.database().ref("outside-user").once('value', function (snapshot) {
     var list = snapshot.val()
-    Object.keys(list).forEach(function(key) {
+    Object.keys(list).forEach(function (key) {
       // console.log(key, list[key].firstName);
-      if(list[key].firstName == firstName && list[key].lastName == lastName){
+      if (list[key].firstName == firstName && list[key].lastName == lastName) {
         checkDatabase = 1
       }
     });
-    if(checkDatabase == 1){
+    if (checkDatabase == 1) {
       alert("มีผู้ใช้นี้ในระบบแล้ว")
-    }else{
+    } else {
+      var checkNum = (listIn) =>{
+        var num = getRandomArbitrary();
+        if (numIn in listIn){
+          console.log('มีเลขนี้ในระบบ')
+          return checkNum(listIn)
+        }
+        return num
+      }  
+      var randomNum = checkNum(list)
+      sessionStorage.setItem("randomNum", randomNum);
       firebase
-      .database()
-      .ref("outside-user/" + randomNum)
-      .set({
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        number: randomNum
-      }).then(() => {
-        console.log('registered')
-        window.location.href = "../barcodeGene"
-      });
-  
+        .database()
+        .ref("outside-user/" + randomNum)
+        .set({
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          number: randomNum
+        }).then(() => {
+          console.log('registered')
+          window.location.href = "../barcodeGene"
+        });
+
     }
   })
 
@@ -184,7 +204,7 @@ function checkInOutOutside(code) {
   }
 }
 
-function deleteUser(uid){
-  firebase.database().ref("outside-user/"+uid).remove()
-  window.location.href="../register"
+function deleteUser(uid) {
+  firebase.database().ref("outside-user/" + uid).remove()
+  window.location.href = "../register"
 }
