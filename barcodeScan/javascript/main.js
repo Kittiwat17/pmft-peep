@@ -62,7 +62,6 @@ function load_quagga() {
             });
 
             Quagga.onDetected(function (result) {
-                var user = firebase.auth().currentUser;
                 console.log('detected');
                 var last_code = result.codeResult.code;
                 console.log(last_code + '/n');
@@ -72,6 +71,7 @@ function load_quagga() {
                 console.log(last_result.length);
 
                 if (last_result.length > 20) {
+                    
                     console.log(last_result);
                     code = order_by_occurrence(last_result);
                     code = code[0][0];
@@ -83,7 +83,19 @@ function load_quagga() {
                     // alert(code);
                     new Audio('../../sound/beep-sound.mp3').play();
                     Quagga.stop();
-                    checkInOutOutside(code)
+                    
+                    firebase.database().ref("outside-user").once('value', function (snapshot) {
+                        var list = snapshot.val()
+                        if (code in list) {
+                          // if has data
+                          // console.log('True')
+                          checkInOutOutside(numberID);
+                        } else {
+                          //if not has data in list
+                          // console.log('False')
+                          alert("ไม่มีเลขนี้ในระบบ")
+                        }
+                      })    
 
                     document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : ' + code;
 
