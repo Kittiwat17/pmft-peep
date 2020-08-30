@@ -44,6 +44,6 @@ body {
 }
 
 .txt-modal-1 {
-    font-size: calc(14px + (26 - 14) * ((100vw - 320px) / (1600 - 320)));
+    font-size: calc(16px + (26 - 16) * ((100vw - 320px) / (1600 - 320)));
     margin-top: 1rem;
 }
