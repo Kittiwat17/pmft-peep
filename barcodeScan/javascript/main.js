@@ -83,7 +83,7 @@ function load_quagga() {
                     // alert(code);
                     new Audio('../../sound/beep-sound.mp3').play();
                     Quagga.stop();
-                    checkInOut(code)
+                    checkInOutOutside(code)
 
                     document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : ' + code;
 
@@ -184,45 +184,45 @@ flipBtn.addEventListener('click', function () {
 })
 
 
-function checkInOut(code) {
-    var user = firebase.auth().currentUser;
-    if (user) {
-        var uid = user.uid;
-        //user in system
-        var path = firebase.database().ref('users-store/' + uid)
-        path.once('value').then(function (snapshot) {
-            var a = snapshot.child("customer").exists();
-            if (a) {
-                firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
-                    var temp = snapshot.val()
-                    console.log(temp)
-                    if (temp.includes(code)) {
-                        console.log(temp)
-                        const index = temp.indexOf(code);
-                        if (index > -1) {
-                            temp.splice(index, 1);
-                        }
-                        database.ref("users-store/" + uid).update({ customer: temp })
-                    } else {
-                        temp.push(code)
-                        console.log(temp)
-                        database.ref("users-store/" + uid).update({ customer: temp })
-                    }
-                });
+// function checkInOut(code) {
+//     var user = firebase.auth().currentUser;
+//     if (user) {
+//         var uid = user.uid;
+//         //user in system
+//         var path = firebase.database().ref('users-store/' + uid)
+//         path.once('value').then(function (snapshot) {
+//             var a = snapshot.child("customer").exists();
+//             if (a) {
+//                 firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
+//                     var temp = snapshot.val()
+//                     console.log(temp)
+//                     if (temp.includes(code)) {
+//                         console.log(temp)
+//                         const index = temp.indexOf(code);
+//                         if (index > -1) {
+//                             temp.splice(index, 1);
+//                         }
+//                         database.ref("users-store/" + uid).update({ customer: temp })
+//                     } else {
+//                         temp.push(code)
+//                         console.log(temp)
+//                         database.ref("users-store/" + uid).update({ customer: temp })
+//                     }
+//                 });
 
 
 
-            } else {
-                var customer = []
-                customer.push(code)
-                console.log(customer)
-                firebase.database().ref("users-store/" + uid).update({
-                    'customer': customer
-                })
-            }
-        })
-    } else {
-        alert("Please login again")
-        window.location.href = "../../index.html"
-    }
-}
+//             } else {
+//                 var customer = []
+//                 customer.push(code)
+//                 console.log(customer)
+//                 firebase.database().ref("users-store/" + uid).update({
+//                     'customer': customer
+//                 })
+//             }
+//         })
+//     } else {
+//         alert("Please login again")
+//         window.location.href = "../../index.html"
+//     }
+// }
