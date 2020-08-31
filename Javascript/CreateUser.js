@@ -139,7 +139,6 @@ function checkUser(e) {
       // if has data
       // console.log('True')
       checkInOutOutside(numberID);
-      numberID = ""
     } else {
       //if not has data in list
       // console.log('False')
@@ -151,6 +150,7 @@ function checkUser(e) {
       })
     }
   })
+  document.getElementById('id-input').value = ""
   e.preventDefault()
 }
 
