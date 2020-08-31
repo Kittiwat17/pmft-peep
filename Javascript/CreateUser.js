@@ -16,27 +16,26 @@ function registerEmail(e) {
       if (errorCode == "auth/weak-password") {
         alert("The password is too weak.");
       } else if (errorCode == "auth/email-already-in-use") {
-        alert("มีผู้ใช้นี้ในระบบแล้ว")
-      }
-      else {
+        alert("มีผู้ใช้นี้ในระบบแล้ว");
+      } else {
         alert(errorMessage);
       }
       console.log(error);
 
       // [END_EXCLUDE]
-    }).then((cred) => {
+    })
+    .then((cred) => {
       if (cred) {
         var user = firebase.auth().currentUser;
         if (user) {
           var uid = user.uid;
         }
-        writeUserData(nameStore, email, uid)
+        writeUserData(nameStore, email, uid);
         window.location.href = "../Map/index.html";
       }
-    })
+    });
   e.preventDefault();
 }
-
 
 function writeUserData(place, email, uid) {
   firebase
@@ -47,54 +46,55 @@ function writeUserData(place, email, uid) {
       email: email,
       location: "",
     });
-
 }
 
-
-
 function createOutsideUser(e) {
-
-
-  var firstName = document.getElementById("firstNameValue").value
-  var lastName = document.getElementById("lastNameValue").value
-  var email = document.getElementById("emailValue").value
-  var checkDatabase = 0
-  firebase.database().ref("outside-user").once('value', function (snapshot) {
-    var list = snapshot.val()
-    Object.keys(list).forEach(function (key) {
-      // console.log(key, list[key].firstName);
-      if (list[key].firstName == firstName && list[key].lastName == lastName) {
-        checkDatabase = 1
+  var firstName = document.getElementById("firstNameValue").value;
+  var lastName = document.getElementById("lastNameValue").value;
+  var email = document.getElementById("emailValue").value;
+  var checkDatabase = 0;
+  firebase
+    .database()
+    .ref("outside-user")
+    .once("value", function (snapshot) {
+      var list = snapshot.val();
+      Object.keys(list).forEach(function (key) {
+        // console.log(key, list[key].firstName);
+        if (
+          list[key].firstName == firstName &&
+          list[key].lastName == lastName
+        ) {
+          checkDatabase = 1;
+        }
+      });
+      if (checkDatabase == 1) {
+        alert("มีผู้ใช้นี้ในระบบแล้ว");
+      } else {
+        var checkNum = (listIn) => {
+          var num = getRandomArbitrary();
+          if (num in listIn) {
+            console.log("มีเลขนี้ในระบบ");
+            return checkNum(listIn);
+          }
+          return num;
+        };
+        var randomNum = checkNum(list);
+        sessionStorage.setItem("randomNum", randomNum);
+        firebase
+          .database()
+          .ref("outside-user/" + randomNum)
+          .set({
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            number: randomNum,
+          })
+          .then(() => {
+            console.log("registered");
+            window.location.href = "../barcodeGene";
+          });
       }
     });
-    if (checkDatabase == 1) {
-      alert("มีผู้ใช้นี้ในระบบแล้ว")
-    } else {
-      var checkNum = (listIn) =>{
-        var num = getRandomArbitrary();
-        if (num in listIn){
-          console.log('มีเลขนี้ในระบบ')
-          return checkNum(listIn)
-        }
-        return num
-      }  
-      var randomNum = checkNum(list)
-      sessionStorage.setItem("randomNum", randomNum);
-      firebase
-        .database()
-        .ref("outside-user/" + randomNum)
-        .set({
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          number: randomNum
-        }).then(() => {
-          console.log('registered')
-          window.location.href = "../barcodeGene"
-        });
-
-    }
-  })
 
   // firebase
   //   .database()
@@ -108,7 +108,7 @@ function createOutsideUser(e) {
   //     console.log('registered')
   //     window.location.href = "../barcodeGene"
   //   });
-  e.preventDefault()
+  e.preventDefault();
 }
 
 function getRandomArbitrary() {
@@ -118,109 +118,128 @@ function getRandomArbitrary() {
   set = Math.round(num);
   num2 = set.toString();
   last4Digits = num2.slice(-7);
-  finish_num = last4Digits.padStart(num2.length, '0');
+  finish_num = last4Digits.padStart(num2.length, "0");
   console.log(finish_num);
   console.log("ok");
   return finish_num;
 }
 
-
 function logout() {
-  firebase.auth().signOut().then(() => {
-    window.location.href = "../index.html"
-  })
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      window.location.href = "../index.html";
+    });
 }
 
 function checkUser(e) {
-  firebase.database().ref("outside-user").once('value', function (snapshot) {
-    var list = snapshot.val()
-    var numberID = document.getElementById("id-input").value
-    if (numberID in list) {
-      // if has data
-      // console.log('True')
-      checkInOutOutside(numberID);
-      numberID = ""
-    } else {
-      //if not has data in list
-      // console.log('False')
-      $("#failedModal").modal('show');
-      $('#failedModal').on('shown.bs.modal', function () {
-        $(this).delay(800).fadeOut(300, function () {
-          $(this).modal('hide');
+  firebase
+    .database()
+    .ref("outside-user")
+    .once("value", function (snapshot) {
+      var list = snapshot.val();
+      var numberID = document.getElementById("id-input").value;
+      if (numberID in list) {
+        // if has data
+        // console.log('True')
+        checkInOutOutside(numberID);
+        numberID = "";
+      } else {
+        //if not has data in list
+        // console.log('False')
+        $("#failedModal").modal("show");
+        $("#failedModal").on("shown.bs.modal", function () {
+          $(this)
+            .delay(800)
+            .fadeOut(300, function () {
+              $(this).modal("hide");
+            });
         });
-      })
-    }
-  })
-  e.preventDefault()
+      }
+    });
+  e.preventDefault();
 }
-
-
 
 function checkInOutOutside(code) {
   var user = firebase.auth().currentUser;
   if (user) {
     var uid = user.uid;
     //user in system
-    var path = firebase.database().ref('users-store/' + uid)
-    path.once('value').then(function (snapshot) {
+    var path = firebase.database().ref("users-store/" + uid);
+    path.once("value").then(function (snapshot) {
       var a = snapshot.child("customer").exists();
       if (a) {
-        firebase.database().ref("users-store/" + uid + '/customer').once('value', function (snapshot) {
-          var temp = snapshot.val()
-          console.log(temp)
-          if (temp.includes(code)) {
-            //เช็คชื่อออกถ้าเจอเลขในCustomer
-            console.log(temp)
-            const index = temp.indexOf(code);
-            if (index > -1) {
-              temp.splice(index, 1);
+        firebase
+          .database()
+          .ref("users-store/" + uid + "/customer")
+          .once("value", function (snapshot) {
+            var temp = snapshot.val();
+            console.log(temp);
+            if (temp.includes(code)) {
+              //เช็คชื่อออกถ้าเจอเลขในCustomer
+              console.log(temp);
+              const index = temp.indexOf(code);
+              if (index > -1) {
+                temp.splice(index, 1);
+              }
+              database.ref("users-store/" + uid).update({ customer: temp });
+              $("#logoutModal").modal("show");
+              $("#logoutModal").on("shown.bs.modal", function () {
+                $(this)
+                  .delay(800)
+                  .fadeOut(300, function () {
+                    $(this).modal("hide");
+                  });
+              });
+            } else {
+              //เช็คชื่อ เข้าจ้าา
+              temp.push(code);
+              console.log(temp);
+              database
+                .ref("users-store/" + uid)
+                .update({ customer: temp })("#correctModal")
+                .modal("show");
+              $("#correctModal").on("shown.bs.modal", function () {
+                $(this)
+                  .delay(800)
+                  .fadeOut(300, function () {
+                    $(this).modal("hide");
+                  });
+              });
             }
-            database.ref("users-store/" + uid).update({ customer: temp })
-            $("#correctModal").modal('show');
-            $('#correctModal').on('shown.bs.modal', function () {
-                $(this).delay(800).fadeOut(300, function () {
-                    $(this).modal('hide');
-                });
-            })
-          } else {
-            //เช็คชื่อ เข้าจ้าา
-            temp.push(code)
-            console.log(temp)
-            database.ref("users-store/" + uid).update({ customer: temp })
-            $("#logoutModal").modal('show');
-            $('#logoutModal').on('shown.bs.modal', function () {
-                $(this).delay(800).fadeOut(300, function () {
-                    $(this).modal('hide');
-                });
-            })
-          }
-        });
-
-
-
+          });
       } else {
-        //อันนี้เช็คชื่อเข้าเหมือนกัน 
-        var customer = []
-        customer.push(code)
-        console.log(customer)
-        firebase.database().ref("users-store/" + uid).update({
-          'customer': customer
-        })
-        $("#logoutModal").modal('show');
-        $('#logoutModal').on('shown.bs.modal', function () {
-            $(this).delay(800).fadeOut(300, function () {
-              $(this).modal('hide');
+        //อันนี้เช็คชื่อเข้าเหมือนกัน
+        var customer = [];
+        customer.push(code);
+        console.log(customer);
+        firebase
+          .database()
+          .ref("users-store/" + uid)
+          .update({
+            customer: customer,
+          })("#correctModal")
+          .modal("show");
+        $("#correctModal").on("shown.bs.modal", function () {
+          $(this)
+            .delay(800)
+            .fadeOut(300, function () {
+              $(this).modal("hide");
             });
-          })
+        });
       }
-    })
+    });
   } else {
-    alert("Please login again")
-    window.location.href = "../../index.html"
+    alert("Please login again");
+    window.location.href = "../../index.html";
   }
 }
 
 function deleteUser(uid) {
-  firebase.database().ref("outside-user/" + uid).remove()
-  window.location.href = "../register"
+  firebase
+    .database()
+    .ref("outside-user/" + uid)
+    .remove();
+  window.location.href = "../register";
 }
