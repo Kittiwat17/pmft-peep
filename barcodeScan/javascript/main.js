@@ -90,6 +90,7 @@ function load_quagga() {
                           // if has data
                           // console.log('True')
                           checkInOutOutside(code);
+                        //   $('#correctModal').modal('show');
                         } else {
                           //if not has data in list
                           // console.log('False')
@@ -99,7 +100,6 @@ function load_quagga() {
 
                     document.querySelector('#show-code').innerHTML = 'โค๊ดของคุณคือ : ' + code;
 
-                    $('#correctModal').modal('show');
 
                     setTimeout(load_quagga(), 3000);
 
