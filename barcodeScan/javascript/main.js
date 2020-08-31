@@ -89,7 +89,7 @@ function load_quagga() {
                         if (code in list) {
                           // if has data
                           // console.log('True')
-                          checkInOutOutside(numberID);
+                          checkInOutOutside(code);
                         } else {
                           //if not has data in list
                           // console.log('False')
