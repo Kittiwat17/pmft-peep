@@ -1,13 +1,3 @@
-var checkNum = (test,numIn) =>{
-  var num = getRandomArbitrary();
-  if (numIn in test){
-    console.log('มีเลขนี้ในระบบ')
-    return checkNum(test)
-  }
-  return num
-}
-
-
 function registerEmail(e) {
   var email = document.getElementById("email").value;
   var password = document.getElementById("passwordForm").value;
@@ -82,7 +72,7 @@ function createOutsideUser(e) {
     } else {
       var checkNum = (listIn) =>{
         var num = getRandomArbitrary();
-        if (numIn in listIn){
+        if (num in listIn){
           console.log('มีเลขนี้ในระบบ')
           return checkNum(listIn)
         }
