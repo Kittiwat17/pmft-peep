@@ -150,7 +150,6 @@ function checkUser(e) {
       })
     }
   })
-  document.getElementById('id-input').value = ""
   e.preventDefault()
 }
 
