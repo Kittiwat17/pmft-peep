@@ -31,6 +31,7 @@ acceptBtn.addEventListener('click', () => {
             emailBar = document.querySelector("#email");
             fnameBar.innerHTML = fname;
             lnameBar.innerHTML = lname;
+            emailBar.innerHTML = targetUser.email
             
             // emailBar.innerHTML = email;
 
