@@ -94,7 +94,12 @@ function load_quagga() {
                         } else {
                           //if not has data in list
                           // console.log('False')
-                          alert("ไม่มีเลขนี้ในระบบ กรุณาให้ผู้มาใช้บริการติดต่อสถานที่ หรือลงทะเบียนบุคคลภายนอก")
+                          $("#failedModal").modal('show');
+                          $('#failedModal').on('shown.bs.modal', function () {
+                                $(this).delay(1200).fadeOut(500, function () {
+                                    $(this).modal('hide');
+                                });
+                          })
                         }
                       })    
 

@@ -144,7 +144,7 @@ function checkUser(e) {
       // console.log('False')
       $("#failedModal").modal('show');
       $('#failedModal').on('shown.bs.modal', function () {
-        $(this).delay(800).fadeOut(300, function () {
+        $(this).delay(1200).fadeOut(500, function () {
           $(this).modal('hide');
         });
       })
