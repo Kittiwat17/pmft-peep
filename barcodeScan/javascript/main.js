@@ -11,7 +11,7 @@ if (supports['facingMode'] === true) {
 
 
 
-shouldFaceUser = true;
+shouldFaceUser = false;
 
 function order_by_occurrence(arr) {
     var counts = {};
@@ -139,7 +139,7 @@ function load_quagga() {
                 showFrequency: false,
                 drawScanline: true,
                 showPattern: false,
-                readers: ["code_39_vin_reader", "code_39_reader"]
+                readers: ["code_39_vin_reader", "code_39_reader", "code_128"]
             },
             locator: {
                 halfSample: true,
