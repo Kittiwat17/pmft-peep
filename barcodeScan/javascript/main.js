@@ -139,7 +139,7 @@ function load_quagga() {
                 showFrequency: false,
                 drawScanline: true,
                 showPattern: false,
-                readers: ["code_39_vin_reader", "code_39_reader", "code_128"]
+                readers: ["code_39_vin_reader", "code_39_reader", "code_128_reader"]
             },
             locator: {
                 halfSample: true,
